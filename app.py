@@ -3,11 +3,14 @@ from dash import dcc, html, dash_table
 import plotly.express as px
 import pandas as pd
 from dash.dependencies import Input, Output
+import os
 
 app = dash.Dash(__name__)
+server = app.server  # 배포를 위한 Flask 서버 객체
 
 # 데이터 로드
-df = pd.read_csv('data/sales_data.csv')
+file_path = os.path.join(os.path.dirname(__file__), 'data/sales_data.csv')
+df = pd.read_csv(file_path)
 
 # Dash 레이아웃
 app.layout = html.Div([

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>데이터 포털</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>회사 매출 데이터 포털</h1>
+    </header>
+    <main>
+        <h2>매출 데이터</h2>
+        {{ table | safe }}  <!-- HTML 테이블 삽입 -->
+    </main>
+</body>
+</html>
